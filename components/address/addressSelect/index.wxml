@@ -1,0 +1,18 @@
+
+<!-- 2020-10-29 14:48 -->
+<view class="view-address">
+	<view class="view-address-left">
+		<van-icon name="location-o" color="#4C8AFF" size="44rpx" />
+	</view>
+	<text class="view-address-no" wx:if="{{item === null}}">填写收货地址</text>
+	<view class="view-address-content" wx:if="{{item !== null}}">
+		<view class="view-address-content-top">
+			<text>{{item.name}}</text>
+			<text>{{item.phone}}</text>
+		</view>
+		<text class="view-address-content-address">{{item.address}}</text>
+	</view>
+	<view class="view-address-right">
+		<van-icon name="arrow" color="#999999" size="44rpx" />
+	</view>
+</view>

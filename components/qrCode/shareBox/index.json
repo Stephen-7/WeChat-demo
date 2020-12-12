@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "navbar":"/components/navCapsule/index",
+    "painter": "/components/qrCode/painter/painter",
+    "dialog-modal": "/components/qrCode/dialogModal/index"
+  }
+}

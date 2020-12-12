@@ -1,0 +1,23 @@
+<!-- 2020-10-29 14:48 -->
+<block wx:for="{{list}}" wx:key="index">
+	<view class="view-row">
+		<view class="view-row-top">
+			<view class="view-row-top-top">
+				<view class="view-row-top-top-left">
+					<text>{{item.name}}</text>
+					<text>{{item.phone}}</text>
+				</view>
+				<view class="view-row-top-top-right">
+					<text>默认</text>
+					<van-checkbox value="{{ item.checked }}" checked-color="#4C8AFF" icon-size="40rpx" data-index="{{index}}" data-item="{{item}}" bind:change="onChange">
+					</van-checkbox>
+				</view>
+			</view>
+			<text class="view-row-top-bottom">{{item.address}}</text>
+		</view>
+		<view class="view-row-bottom">
+			<image src="/assets/image/btn_none_30_delete_gray@2x.png" data-index="{{index}}" data-item="{{item}}" catchtap="delete"></image>
+			<image src="/assets/image/btn_line_30_compile_gray@2x.png" data-index="{{index}}" data-item="{{item}}" catchtap="toAddress"></image>
+		</view>
+	</view>
+</block>

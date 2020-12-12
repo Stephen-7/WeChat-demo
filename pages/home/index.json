@@ -1,0 +1,23 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "navCapsule": "/components/navCapsule/index",
+    "navSearch":"/components/navSearch/index",
+    "imageCropper": "/components/imageCropper/src/image-cropper",
+    "bluetoothprinter":"/components/bluetoothprinter/index",
+    "goodsAction":"/components/goodsAction/index",
+    "selectTime":"/components/selectTime/index",
+    "search":"/components/search/index",
+    "selectCity":"/components/selectCity/index",
+    "tabItem":"/components/tabItem/index",
+    "swiper":"/components/swiper/index",
+    "noData":"/components/noData/index",
+    "videoSwiper":"/components/videoSwiper/index",
+    "backTop":"/components/backTop/index",
+    "citySearch":"/components/citySearch/index",
+    "addressSelect":"/components/address/addressSelect/index",
+    "addressList":"/components/address/addressList/index",
+    "addressForm":"/components/address/addressForm/index",
+    "graph":"/components/graph/index"
+  }
+}

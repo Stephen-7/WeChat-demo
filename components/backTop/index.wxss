@@ -1,0 +1,11 @@
+.cart-box {
+  width: 104rpx;
+  position: fixed;
+  bottom: 5%;
+  right: 32rpx;
+}
+
+.cart-box image {
+  width: 104rpx;
+  height: 104rpx;
+}

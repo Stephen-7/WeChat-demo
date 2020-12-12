@@ -1,0 +1,42 @@
+<view class='cu-custom {{showFixed?"fixed":""}}' style="height:{{cBarHeight}}px;">
+  <view class="cu-bar"
+    style="height:{{cBarTitleHeight}}px;padding-top:{{cBarTitlePaddingTop}}px;z-index:998;background-color:{{bgColor}};border-bottom:{{borderColor?'1rpx solid #eeeeee':''}}">
+
+    <!-- 左边胶囊返回键&&首页键 -->
+    <view wx:if="{{showBackHome}}" class='action border-custom'
+      style='width:{{custom.width}}px;height:{{custom.height}}px;margin-left:calc(750rpx - {{custom.right}}px)'>
+      <!-- 左边胶囊返回键 -->
+      <navigator class="citem" open-type="{{navigateBack}}" delta="1" hover-class="none"
+        style="width:{{custom.width}}px;height:{{custom.height}}px;">
+        <text class='cu-icon-font icon-back text'
+          style="height:{{custom.height}}px;{{isiPad?'font-size:20rpx;':''}}"></text>
+      </navigator>
+
+      <!-- 左边胶囊Home键 -->
+      <navigator class="citem" open-type="switchTab" hover-class="none" url="{{toHome}}"
+        style="width:{{custom.width}}px;height:{{custom.height}}px;">
+        <text class='cu-icon-font icon-homefill text'
+          style="height:{{custom.height}}px;{{isiPad?'font-size:20rpx;':''}}"></text>
+      </navigator>
+    </view>
+
+    <!-- 返回键 可带文字 -->
+    <navigator wx:if="{{showBack}}" class='action' open-type="{{navigateBack}}" delta="1" hover-class="none"
+      style="{{isiPad?'font-size:20rpx;':''}}">
+      <text class="cu-icon-font icon-back text"></text>
+      {{showBackText?'返回':''}}
+    </navigator>
+
+    <!-- Home键 -->
+    <navigator wx:if="{{showHome}}" class='action' open-type="switchTab" url="{{toHome}}" hover-class="none">
+      <text class='cu-icon-font icon-homefill text home-only'></text>
+    </navigator>
+
+    <!-- 标题 -->
+    <view class="content {{titleTextClass}} {{loading?'nva-loading':''}}"
+      style="top:{{cBarTitleTop}}px;{{isiPad?'font-size:24rpx;':''}}">
+      <text wx:if="{{loading}}" class="iconfont2 icon-loading"></text>
+      <text>{{title}}</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,82 @@
+/* components/address/addressSelect/index.wxss */
+
+.view-address {
+	width: 100%;
+	height: auto;
+	border-radius: 8rpx;
+	background-color: #FFFFFF;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 20rpx solid #F8F8F8;
+}
+
+.view-address-no {
+	width: 100%;
+	height: 90rpx;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	font-size: 30rpx;
+	color: #333333;
+}
+
+.view-address-left,
+.view-address-right {
+	width: 70rpx;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.view-address-left{
+	margin-right: 6rpx;
+}
+
+.view-address-content {
+	flex: 1;
+	height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+}
+
+.view-address-content-top {
+	width: 100%;
+	height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: row;
+	margin-top: 24rpx;
+	margin-bottom: 14rpx;
+}
+
+.view-address-content-top>text {
+	width: auto;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	font-size: 30rpx;
+	color: #333333;
+}
+
+.view-address-content-top>text:nth-child(1) {
+	margin-right: 64rpx;
+}
+
+.view-address-content-address {
+	width: 100%;
+	height: auto;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	text-align: left;
+	font-size: 28rpx;
+	color: #333333;
+	margin-bottom: 24rpx;
+	box-sizing: border-box;
+}

@@ -1,0 +1,13 @@
+<!--components/citySearch/index.wxml-->
+<view class="top">
+	<view class="top-left" bindtap="changeCity">
+		<text class="top-left-title">{{city}}</text>
+		<text class="top-left-border"></text>
+	</view>
+	<view class="top-right">
+		<van-icon class="top-right-image" bindtap="searchFor" name="search" size="40rpx" />
+		<input confirm-type="search" bindconfirm="firm" value='{{value}}' bindinput="chanheValue" class="top-right-text" placeholder="{{placeholder}}"></input>
+	</view>
+</view>
+
+<selectCity cityShow="{{cityShow}}" bind:cityValue="getCityValue" />

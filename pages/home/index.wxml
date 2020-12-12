@@ -1,0 +1,43 @@
+<!--pages/home/index.wxml-->
+<view class="view">
+	<navCapsule id="c-bar" nav="{{nav}}" />
+
+	<!-- <navSearch /> -->
+
+	<!-- <noData height="{{100}}" title="{{'暂无数据'}}"/> -->
+
+	<!-- <swiper bannerList="{{bannerList}}" /> -->
+
+	<!-- <van-button type="primary" bindtap="chooseAddress">点击触发弹窗</van-button> -->
+
+	<!-- <search /> -->
+
+	<!-- <tabItem tabList="{{tabList}}" bind:tabIndex="getTabIndex" /> -->
+
+	<!-- <selectCity cityShow="{{cityShow}}" bind:cityValue="getCityValue" /> -->
+
+	<!-- <selectTime searchShow="{{searchShow}}" bind:currentDate="getCurrentDate" /> -->
+
+	<!-- <imageCropper id="image-cropper" limit_move="{{true}}" disable_rotate="{{true}}" width="{{width}}" height="{{height}}" imgSrc="{{src}}" bindload="cropperload" bindimageload="loadimage" bindtapcut="clickcut" /> -->
+
+	<!-- <button class="intro" bindtap="showLoading">wx.showNavigationBarLoading</button>
+	<button class="intro" bindtap="hideLoading">wx.hideNavigationBarLoading</button> -->
+
+	<!-- <bluetoothprinter /> -->
+
+	<!-- <goodsAction /> -->
+
+	<!-- <videoSwiper videoList="{{videoList}}" /> -->
+
+	<!-- <backTop top="{{top}}" bind:scrollTop="getScrollTop" /> -->
+
+	<!-- <citySearch bind:backCityValue="getCityValue" bind:backSearchValue="getSearchValue" /> -->
+
+	<!-- <addressSelect addressSelect="{{addressSelect}}" /> -->
+
+	<!-- <addressList addressList="{{addressList}}" bind:backCheckAddress="getCheckAddress" bind:backDeleteAddress="getDeleteAddress" bind:backEditAddress="getEditAddress"/> -->
+
+	<!-- <addressForm addressForm="{{addressForm}}" bind:backFormAddress="getFormAddress"/> -->
+
+	<!-- <graph graph="{{graph}}" /> -->
+</view>

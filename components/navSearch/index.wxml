@@ -1,0 +1,14 @@
+<!--component/navSearch/index.wxml-->
+<view class="custom_nav" style="height:{{navbarHeight}}px;">
+	  <view class="custom_nav_box" style="height:{{navbarHeight}}px;">
+		<view class="search-box" style="top:{{statusBarHeight + 4}}px; height:{{cusnavH}}px;">
+			<view class="cancel" bindtap="toBack">
+				<van-icon name="arrow-left" size="48rpx" />
+			</view>
+			<view class="view-search-row">
+				<van-icon class="view-search-row-icon" name="search" size="40rpx" bindtap="bindSearch"/>
+				<input confirm-type="search"  placeholder-style="color:#999999" value='{{inputValue}}' bindconfirm="firm" bindinput="bindInput" class="view-search-row-text" placeholder="{{placeholder}}"></input>
+			</view>
+		</view>
+	</view>
+</view>

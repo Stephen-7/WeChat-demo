@@ -1,0 +1,6 @@
+
+<van-tabs active="{{ active }}" bind:click="onClick">
+	<block wx:for="{{item}}" wx:key="index">
+		<van-tab title="{{item}}+{{index}}">{{item}}{{index}}</van-tab>
+	</block>
+</van-tabs>

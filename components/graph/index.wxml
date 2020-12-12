@@ -1,0 +1,2 @@
+<!--components/graph/index.wxml-->
+<canvas disable-scroll="{{true}}" canvas-id="canvasColumn" id="canvasColumn" class="charts"></canvas>

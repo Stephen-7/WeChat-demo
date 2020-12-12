@@ -1,0 +1,11 @@
+<view class="container">
+	<swiper class="video-swiper" circular="{{false}}" easing-function="{{easingFunction}}" vertical current="{{current}}" duration="{{duration}}" bindanimationfinish="animationfinish">
+		<!-- curQueue 循环会导致video重新插入，objectFit 不可变更 -->
+		<block wx:if="{{curQueue.length !== 0}}" wx:for="{{curQueue}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+			<swiper-item class="swiper-item" data-id="video_{{index}}">
+				<video wx:if="{{current === index}}" id="video_{{index}}" autoplay="{{true}}" class="video_item" loop="{{loop}}" enable-play-gesture enable-progress-gesture show-center-play-btn="{{false}}" controls="{{false}}" src="{{item.videoUrl}}" data-id="{{item.id}}" object-fit="fill" data-index="{{index}}" bindchange="onChange" bindplay="onPlay" bindpause="onPause" bindended="onEnded" binderror="onError" bindtimeupdate="onTimeUpdate" bindwaiting="onWaiting" bindprogress="onProgress" bindloadedmetadata="onLoadedMetaData">
+				</video>
+			</swiper-item>
+		</block>
+	</swiper>
+</view>

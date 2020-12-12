@@ -1,0 +1,31 @@
+<view class="view">
+	<van-notify id="van-notify" />
+	<view class="view-top">
+		<view class="view-top-row">
+			<text>收货人</text>
+			<input placeholder="请输入" placeholder-style="color:#999999" data-model="name" bindinput="onTypes"  value="{{name}}"></input>
+		</view>
+		<view class="view-top-row">
+			<text>联系电话</text>
+			<input placeholder="请输入" placeholder-style="color:#999999" data-model="phone" bindinput="onTypes" maxlength="11" value="{{phone}}"></input>
+		</view>
+		<view class="view-top-row">
+			<text>所在地区</text>
+			<input placeholder="请选择" placeholder-style="color:#999999" value="{{area}}" disabled="true" bindtap="showPopup"></input>
+			<van-icon name="arrow" size="44rpx" color="#cccccc" />
+		</view>
+		<view class="view-top-row">
+			<text>详细地址</text>
+			<input placeholder="请输入" placeholder-style="color:#999999" data-model="address" bindinput="onTypes" value="{{address}}"></input>
+		</view>
+	</view>
+	<view class="view-bottom">
+		<view class="view-bottom-row">
+			<text>设为默认地址</text>
+			<van-switch checked="{{ checked }}" size="50rpx" active-color="#4C8AFF" inactive-color="#f8f8f8" bind:change="onChange" />
+		</view>
+		<text class="submit {{carryOut?'submitTrue':''}}" bindtap="submit">保存地址</text>
+	</view>
+</view>
+
+<selectCity cityShow="{{cityShow}}" bind:cityValue="getCityValue" />

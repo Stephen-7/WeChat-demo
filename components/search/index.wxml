@@ -1,0 +1,7 @@
+<view class="search-box">
+		<view class="view-search-row">
+			<van-icon class="view-search-row-icon" name="search" size="40rpx" bindtap="search"/>
+			<input confirm-type="search" bindconfirm="firm" value='{{inputValue}}' bindinput="bindInput" class="view-search-row-text" placeholder="{{placeholder}}"></input>
+		</view>
+		<view class="cancel" bindtap="cancel">取消</view>
+	</view>
