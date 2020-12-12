@@ -34,110 +34,6 @@ Page({
           max: 20
         }
       },
-      {
-        id: 1,
-        imgSrc: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1545749696672&di=31a25f2946bb876476efc397929f1d60&imgtype=0&src=http%3A%2F%2Fo4.xiaohongshu.com%2Fdiscovery%2Fw640%2F462ba43540b307990a8b4a2664b9ef20_640_640_92.jpg',
-        title: "[马应龙]红霉素软膏",
-        desc: '10g(1%)',
-        price: 200,
-        isSelect: false,
-        count: {
-          quantity: 2,
-          min: 1,
-          max: 20
-        }
-      },
-      {
-        id: 1,
-        imgSrc: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1545749696672&di=31a25f2946bb876476efc397929f1d60&imgtype=0&src=http%3A%2F%2Fo4.xiaohongshu.com%2Fdiscovery%2Fw640%2F462ba43540b307990a8b4a2664b9ef20_640_640_92.jpg',
-        title: "[马应龙]红霉素软膏",
-        desc: '10g(1%)',
-        price: 200,
-        isSelect: false,
-        count: {
-          quantity: 2,
-          min: 1,
-          max: 20
-        }
-      },
-      {
-        id: 1,
-        imgSrc: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1545749696672&di=31a25f2946bb876476efc397929f1d60&imgtype=0&src=http%3A%2F%2Fo4.xiaohongshu.com%2Fdiscovery%2Fw640%2F462ba43540b307990a8b4a2664b9ef20_640_640_92.jpg',
-        title: "[马应龙]红霉素软膏",
-        desc: '10g(1%)',
-        price: 200,
-        isSelect: false,
-        count: {
-          quantity: 2,
-          min: 1,
-          max: 20
-        }
-      },
-      {
-        id: 1,
-        imgSrc: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1545749696672&di=31a25f2946bb876476efc397929f1d60&imgtype=0&src=http%3A%2F%2Fo4.xiaohongshu.com%2Fdiscovery%2Fw640%2F462ba43540b307990a8b4a2664b9ef20_640_640_92.jpg',
-        title: "[马应龙]红霉素软膏",
-        desc: '10g(1%)',
-        price: 200,
-        isSelect: false,
-        count: {
-          quantity: 2,
-          min: 1,
-          max: 20
-        }
-      },
-      {
-        id: 1,
-        imgSrc: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1545749696672&di=31a25f2946bb876476efc397929f1d60&imgtype=0&src=http%3A%2F%2Fo4.xiaohongshu.com%2Fdiscovery%2Fw640%2F462ba43540b307990a8b4a2664b9ef20_640_640_92.jpg',
-        title: "[马应龙]红霉素软膏",
-        desc: '10g(1%)',
-        price: 200,
-        isSelect: false,
-        count: {
-          quantity: 2,
-          min: 1,
-          max: 20
-        }
-      },
-      {
-        id: 1,
-        imgSrc: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1545749696672&di=31a25f2946bb876476efc397929f1d60&imgtype=0&src=http%3A%2F%2Fo4.xiaohongshu.com%2Fdiscovery%2Fw640%2F462ba43540b307990a8b4a2664b9ef20_640_640_92.jpg',
-        title: "[马应龙]红霉素软膏",
-        desc: '10g(1%)',
-        price: 200,
-        isSelect: false,
-        count: {
-          quantity: 2,
-          min: 1,
-          max: 20
-        }
-      },
-      {
-        id: 1,
-        imgSrc: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1545749696672&di=31a25f2946bb876476efc397929f1d60&imgtype=0&src=http%3A%2F%2Fo4.xiaohongshu.com%2Fdiscovery%2Fw640%2F462ba43540b307990a8b4a2664b9ef20_640_640_92.jpg',
-        title: "[马应龙]红霉素软膏",
-        desc: '10g(1%)',
-        price: 200,
-        isSelect: false,
-        count: {
-          quantity: 2,
-          min: 1,
-          max: 20
-        }
-      },
-      {
-        id: 1,
-        imgSrc: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1545749696672&di=31a25f2946bb876476efc397929f1d60&imgtype=0&src=http%3A%2F%2Fo4.xiaohongshu.com%2Fdiscovery%2Fw640%2F462ba43540b307990a8b4a2664b9ef20_640_640_92.jpg',
-        title: "[马应龙]红霉素软膏",
-        desc: '10g(1%)',
-        price: 200,
-        isSelect: false,
-        count: {
-          quantity: 2,
-          min: 1,
-          max: 20
-        }
-      },
     ]
   },
   /**
@@ -224,9 +120,8 @@ Page({
   // 商品全选
   selectAll(e) {
     let totalIndex = 0;
-    let isAllSelect = this.data.isAllSelect; // 是否全选状态
-    isAllSelect = !isAllSelect;
-    let carts = this.data.carts;
+    let isAllSelect = e.detail; // 是否全选状态
+    let {carts,} = this.data
     for (let i = 0; i < carts.length; i++) {
       carts[i].isSelect = isAllSelect; // 改变所有商品状态
       if (isAllSelect) {
@@ -266,7 +161,10 @@ Page({
         totalIndex: 0,
       })
     } else {
-      console.log('未全选商品！')
+      wx.showToast({
+        title: '未全选商品！',
+        icon: 'none',
+      })
     }
   },
   /**

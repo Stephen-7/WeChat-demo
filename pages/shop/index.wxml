@@ -1,12 +1,10 @@
 <!--pages/drugOrder/drugOrder.wxml-->
 <view class='drug-order'>
-  <scroll-view class='scroll' scroll-y="true">
+  <scroll-view class='scroll' scroll-y="true" wx:if="{{carts.length !== 0}}">
     <view class='cart_container' wx:for="{{carts}}" wx:key="index">
       <view class='item-select'>
-        <view class='{{item.isSelect?"item-select-yes":"item-select-no"}}' bindtap="switchSelect" data-index="{{index}}"
-          data-id="{{index}}">
-          <text></text>
-        </view>
+        <van-checkbox value="{{ item.isSelect }}" bind:change="switchSelect" data-index="{{index}}" data-id="{{index}}">
+        </van-checkbox>
       </view>
       <image class='item-image' data-id='{{item.id}}' src='{{item.imgSrc}}' bindtap='selectDelete'></image>
       <view class='column'>
@@ -28,16 +26,13 @@
 
   <view class='bottom_total'>
     <view class='bottom_row'>
-      <view bindtap='selectAll' class='{{isAllSelect?"item-allselect-yes":"item-allselect-no"}}'>
-        <text></text>
-      </view>
+      <view class='allChan'><van-checkbox value="{{ isAllSelect }}" bind:change="selectAll"></van-checkbox></view>
       <text class='small_text'>全选</text>
       <text class="total">合计：</text>
       <text class='price'>￥{{totalMoney}}</text>
       <view class='button-red button' bindtap='allDelete'>结算（{{totalIndex}}）</view>
     </view>
   </view>
-  <view class='no-list' wx:if="{{listMessage}}">
-    <text>暂无数据</text>
-  </view>
+
+  <noData wx:if="{{carts.length === 0}}" height="{{100}}" title="{{'暂无数据'}}" />
 </view>
