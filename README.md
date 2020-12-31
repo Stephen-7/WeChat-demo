@@ -1,5 +1,5 @@
 # 小程序目录结构
-|-- assets 资源
+|-- assets 资源 <br>
 |-- image 图片资源
 |-- style 样式资源
 
