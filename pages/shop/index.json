@@ -1,5 +1,7 @@
 {
+  "navigationBarTitleText": "购物车",
   "usingComponents": {
-    "noData":"/components/noData/index"
+    "noData":"/components/noData/index",
+    "navCapsule": "/components/navCapsule/index"
   }
 }

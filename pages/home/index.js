@@ -8,7 +8,7 @@ Page({
 		nav: {
 			"top": 0, // 高度
 			"title": "测试小程序", // 标题
-			"showBackHome": true, // 左胶囊返回键&&首页键
+			"showBackHome": false, // 左胶囊返回键&&首页键
 			"showHome": false, // 左胶囊单首页键
 			"showBack": false, // 左胶囊单返回键
 			"showBackText": false, // 左胶囊单返回键文字
@@ -24,7 +24,7 @@ Page({
 		searchShow: false,
 		cityShow: false,
 		tabList: ['1页', '2页', '3页', '4页', '5页', '6页', '7页', '8页', '9页'],
-		bannerList: [],
+		bannerList: [1,1,1,1],
 		videoList: [],
 		addressSelect: {
 			"name": "Stephen",
@@ -55,7 +55,21 @@ Page({
 			},
 			{
 				"id": 3,
-				"name": "吴加良3",
+				"name": "Stephen3",
+				"phone": "176****5317",
+				"checked": false,
+				"address": "广东省广州市汉溪大道北时代E-pink2506",
+			},
+			{
+				"id": 4,
+				"name": "Stephen4",
+				"phone": "176****5317",
+				"checked": false,
+				"address": "广东省广州市汉溪大道北时代E-pink2506",
+			},
+			{
+				"id": 5,
+				"name": "Stephen5",
 				"phone": "176****5317",
 				"checked": false,
 				"address": "广东省广州市汉溪大道北时代E-pink2506",

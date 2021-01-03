@@ -1,4 +1,32 @@
 <!--pages/mine/index.wxml-->
 <view class="view">
-	
+  <view class="view-bg">
+    <image class="view-bg-image" src="/assets/image/special_bg_mine1@2x.png"></image>
+    <view class="view-info" bindtap="seteleTap">
+      <image class="view-info-image" src="{{info.avatar}}"></image>
+      <text class="view-info-title">{{info.name || '登录/注册'}}</text>
+    </view>
+  </view>
+
+  <view class="view-order">
+    <view class="view-order-state">
+      <text class="view-order-title">商品订单</text>
+      <text class="view-order-text">查看全部</text>
+      <van-icon name="arrow" size="16px" color="#cccccc" />
+    </view>
+    <view class="view-order-row">
+      <view class="view-order-type" wx:for="{{orderArr}}" wx:key="index">
+        <van-icon name="{{item.icon}}" info="{{item.info}}" size="25px" />
+        <text class="view-order-type-title">{{item.title}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="view-from">
+    <view class="view-from-row" wx:for="{{linkArr}}" wx:key="index" bindtap="toLink" data-item="{{item}}">
+      <van-icon size="20px" name="{{item.icon}}" />
+      <text class="view-from-row-title">{{item.title}}</text>
+      <van-icon name="arrow" size="20px" color="#cccccc" />
+    </view>
+  </view>
 </view>

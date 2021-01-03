@@ -4,9 +4,9 @@
 
 	<!-- <navSearch /> -->
 
-	<noData height="{{100}}" title="{{'暂无数据'}}"/>
+	<!-- <noData height="{{100}}" title="{{'暂无数据'}}"/> -->
 
-	<!-- <swiper bannerList="{{bannerList}}" /> -->
+	<swiper bannerList="{{bannerList}}" />
 
 	<!-- <van-button type="primary" bindtap="chooseAddress">点击触发弹窗</van-button> -->
 

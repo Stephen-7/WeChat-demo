@@ -3,7 +3,8 @@
     "pages/home/index",
     "pages/shop/index",
     "pages/mine/index",
-    "pages/login/index"
+    "pages/login/index",
+    "pages/index/index"
   ],
   "tabBar": {
     "color": "#999999",
@@ -18,8 +19,8 @@
       },
       {
         "pagePath": "pages/shop/index",
-        "iconPath": "/assets/image/tabbar/icon_tab4_24_nor@2x.png",
-        "selectedIconPath": "/assets/image/tabbar/icon_tab4_24_pre@2x.png",
+        "iconPath": "/assets/image/tabbar/icon_tab2_24_nor@2x.png",
+        "selectedIconPath": "/assets/image/tabbar/icon_tab2_24_pre@2x.png",
         "text": "购物车"
       },
       {
@@ -45,6 +46,8 @@
     "navigationBarTextStyle": "black"
   },
   "usingComponents": {
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
     "van-switch": "@vant/weapp/switch/index",
     "van-empty": "@vant/weapp/empty/index",
     "van-row": "@vant/weapp/row/index",
