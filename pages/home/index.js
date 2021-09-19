@@ -1,4 +1,6 @@
 // pages/home/index.js
+var qqSDK = require('../../utils/qqmap-wx-jssdk')
+const provinces = require('../../request/provinces');
 Page({
 
 	/**
@@ -24,7 +26,7 @@ Page({
 		searchShow: false,
 		cityShow: false,
 		tabList: ['1页', '2页', '3页', '4页', '5页', '6页', '7页', '8页', '9页'],
-		bannerList: [1,1,1,1],
+		bannerList: [1, 1, 1, 1],
 		videoList: [],
 		addressSelect: {
 			"name": "Stephen",
@@ -75,11 +77,57 @@ Page({
 				"address": "广东省广州市汉溪大道北时代E-pink2506",
 			},
 		],
-
+		indexData: [],
 		graph: {
-      categories: ['2500', '2700'],
-      seriesData: ['11-05', '11-07']
-    },
+			categories: ['2500', '2700'],
+			seriesData: ['11-05', '11-07']
+		},
+
+		latitude: "",
+		longitude: "",
+	},
+
+	select() {
+		let data = [];
+		let city = provinces.provincCityDistrict.city_list;
+		for (let k in city) {
+			data.push(city[k])
+		};
+		console.log(this.fixTheSearchTeachers(data))
+		this.setData({
+			indexData: this.fixTheSearchTeachers(data)
+		})
+	},
+
+	fixTheSearchTeachers(names) {
+		var data = names;
+		data.sort((a, b) => a.localeCompare(b, 'zh-Hans-CN', {
+			sensitivity: 'accent'
+		}));
+		var compareStr = ["吧", "擦", "搭", "妸", "发", "旮", "哈", "击", "咖", "垃", "妈", "那", "噢", "葩", "妻", "燃", "仨", "它", "挖", "夕", "匝"];
+		var UpperCode = ["A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "W", "W", "X", "Z"];
+		var temp = [],
+			newData = [];
+		for (var j = 0, i = 0; i < data.length;) {
+			if (data[i].localeCompare(compareStr[j], 'zh-Hans-CN', {
+					sensitivity: 'base'
+				}) <= 0) {
+				temp.push(data[i]);
+				i++;
+			} else if (temp.length > 0) {
+				// temp.unshift(UpperCode[j]);
+				// newData.push(temp);
+				newData.push({
+					index: UpperCode[j],
+					data: temp
+				});
+				temp = [];
+				j++;
+			} else {
+				j++;
+			}
+		}
+		return newData;
 	},
 
 	showLoading: function () {
@@ -154,11 +202,41 @@ Page({
 		console.log(e.detail)
 	},
 
+	mapNavigation() {
+		var that = this;
+		var qqMap = new qqSDK({
+			key: 'XRUBZ-XN6KX-IYQ4H-7XZUT-AZWLJ-4PBIA'
+		})
+		qqMap.geocoder({
+			address: {latitude: 23.001009,latitude:113.33966},
+			success: function (res) {
+				var local = res.result.location;
+				that.setData({
+					latitude: local.lat,
+					longitude: local.lng
+				})
+			},
+		})
+		// 使用微信内置地图查看位置
+		wx.getLocation({
+			type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+			success: function (res) {
+				wx.openLocation({
+					latitude: res.latitude,
+					longitude: res.longitude,
+					scale: 28,
+					name: "番禺时代", //打开后显示的地址名称
+				})
+			}
+		})
+	},
+
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
-	onLoad: function (options) {
-		this.cropper = this.selectComponent("#image-cropper");
+	// onLoad: function (options) {
+		// this.select()
+		// this.cropper = this.selectComponent("#image-cropper");
 		//开始裁剪
 		// this.setData({
 		// 	src: "https://raw.githubusercontent.com/1977474741/image-cropper/dev/image/code.jpg",
@@ -166,7 +244,73 @@ Page({
 		// wx.showLoading({
 		// 	title: '加载中'
 		// })
-	},
+	// },
+
+
+// onLoad:function(){
+// 	this.getSetting()
+// },
+
+// //获取定位
+// //判断是否获得了用户地理位置授权
+// getSetting: function() {
+// 	let that = this;
+// 	wx.getSetting({
+// 			success: (res) => {
+// 					// 查看位置权限的状态 如果是首次授权(undefined)或者之前拒绝授权(false)            
+// 					//!res.authSetting['scope.userLocation']
+// 					if (res.authSetting['scope.userLocation'] == false) {
+// 							//之前拒绝授权(false)
+// 							that.openConfirm()
+// 					} else {
+// 							//如果是首次授权则弹出授权窗口进行授权，如果之前进行了授权，则获取地理位置信息
+// 							that.getLocation()
+// 					}
+// 			}
+// 	})
+// },
+
+// openConfirm: function() {
+// 	let that = this;
+// 	wx.showModal({
+// 			content: '检测到您没打开定位权限，是否去设置打开？',
+// 			confirmText: "确认",
+// 			cancelText: "取消",
+// 			success: function(res) {
+// 					console.log(res);
+// 					//点击“确认”时打开设置页面
+// 					if (res.confirm) {
+// 							console.log('用户点击确认')
+// 							wx.openSetting({
+// 									success: (res) => {
+// 											that.getLocation()
+// 									}
+// 							})
+// 					} else {
+// 							console.log('用户点击取消')
+// 					}
+// 			}
+// 	});
+// },
+
+// getLocation: function() {
+// 	let that = this;
+// 	wx.getLocation({
+// 			type: 'gcj02',
+// 			altitude: true,
+// 			success: function(res) {
+// 				console.log(res,'res')
+// 			},
+// 			fail: function(res) {
+// 				 console.log("---未授权---");
+// 				 wx.openSetting({})
+// 			},
+// 			complete: function(res) {},
+// 	})
+// },
+
+
+
 
 	cropperload(e) {
 		console.log("cropper初始化完成");

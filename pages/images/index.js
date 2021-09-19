@@ -1,13 +1,19 @@
-// subcontract/pages/webView/index.js
+// pages/images/index.js
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-		url:"https://llgx.xyz/changdi/index.html",
+		imageUrl: ['https://dev.api.beiru168.com/zed/file/0533a139-a738-46cd-ba3b-4eca4efe54c2.png'],
 	},
 
+	checkImage() {
+		wx.previewImage({
+			current: 0, // 当前显示图片的http链接
+			urls: this.data.imageUrl // 需要预览的图片http链接列表
+		})
+	},
 	/**
 	 * 生命周期函数--监听页面加载
 	 */

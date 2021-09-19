@@ -8,23 +8,23 @@ Page({
 
   },
 
-  getPhoneNumber(e){
-    console.log(e,123)
-    if(e.detail.errMsg == "getPhoneNumber:ok"){
+  getPhoneNumber(e) {
+    console.log(e, 123)
+    if (e.detail.errMsg == "getPhoneNumber:ok") {
       console.log(e.detail)
-    }else{
+    } else {
       console.log('用户拒绝授权')
     }
   },
 
-  getUserInfo(e){
+  getUserInfo(e) {
     console.log(e)
-    if(e.detail.errMsg == "getUserInfo:ok"){
+    if (e.detail.errMsg == "getUserInfo:ok") {
       console.log(e.detail.userInfo)
-    }else{
+    } else {
       console.log('用户拒绝授权')
     }
-   
+
   },
 
   /**
@@ -45,7 +45,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if (wx.canIUse('hideHomeButton')) {
+      wx.hideHomeButton()
+    }
   },
 
   /**

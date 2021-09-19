@@ -64,7 +64,6 @@ Component({
   },
   observers: {
     nav: function (val) {
-      console.log(val, 1222)
       let color = '';
       if (val.top > 100 || val.bgColor) {
         color = '#ffffff'

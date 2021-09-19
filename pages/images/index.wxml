@@ -1,0 +1,4 @@
+<!--pages/images/index.wxml-->
+<view class="view">
+	<image src="{{imageUrl[0]}}" bindtap="checkImage"></image>
+</view>

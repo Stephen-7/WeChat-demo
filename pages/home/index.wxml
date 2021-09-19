@@ -2,11 +2,11 @@
 <view class="view">
 	<navCapsule id="c-bar" nav="{{nav}}" />
 
+	<!-- <swiper bannerList="{{bannerList}}" /> -->
+
 	<!-- <navSearch /> -->
 
 	<!-- <noData height="{{100}}" title="{{'暂无数据'}}"/> -->
-
-	<swiper bannerList="{{bannerList}}" />
 
 	<!-- <van-button type="primary" bindtap="chooseAddress">点击触发弹窗</van-button> -->
 
@@ -40,4 +40,17 @@
 	<!-- <addressForm addressForm="{{addressForm}}" bind:backFormAddress="getFormAddress"/> -->
 
 	<!-- <graph graph="{{graph}}" /> -->
+
+	<!-- <van-index-bar>
+		<view wx:for="{{indexData}}" wx:key="index">
+			<van-index-anchor index="{{item.index}}" />
+			<block wx:for="{{item.data}}" wx:for-item="value" wx:for-index="i" wx:key="i">
+				<van-cell title="{{value}}" data-item="{{item.data}}" data-index="{{i}}" />
+			</block>
+		</view>
+	</van-index-bar> -->
+
+	<!-- <button bindtap="mapNavigation">点击</button> -->
+
+	<navigator url="/subcontract/pages/webView/index">关注公众号</navigator>
 </view>

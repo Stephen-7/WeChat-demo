@@ -277,9 +277,18 @@ Page({
     }
   },
 
-  toConfirmOrder(){
-    let {carts} = this.data;
-    console.log(carts,'carts')
+  toConfirmOrder() {
+    let {
+      carts
+    } = this.data;
+    console.log(carts, 'carts')
+    if (carts.length === 0) {
+      wx.showToast({
+        title: '暂无商品',
+        icon: "none",
+        duration: 2000
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

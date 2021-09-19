@@ -1,0 +1,10 @@
+/* pages/images/index.wxss */
+.view{
+	width: 100%;
+	height: 100vh;
+}
+
+.view image{
+	width: 100%;
+	height: 90vh;
+}
