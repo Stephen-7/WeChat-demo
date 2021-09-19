@@ -31,6 +31,7 @@
 |---- home 首页 <br>
 |---- mine 个人中心<br>
 |---- shop 购物车<br>
+|---- index 引导页<br>
 
 |-- request 小程序接口和请求方法<br>
 |-- utils 小程序第三方本地包<br>
